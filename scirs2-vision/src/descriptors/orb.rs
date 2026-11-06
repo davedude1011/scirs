@@ -257,8 +257,8 @@ fn compute_orientation(image: &[Vec<f32>], r: usize, c: usize, half_patch: usize
 fn rotate_pair(dy: i32, dx: i32, angle: f32) -> (i32, i32) {
     let cos_a = angle.cos();
     let sin_a = angle.sin();
-    let dy_r = (cos_a * dy as f32 - sin_a * dx as f32).round() as i32;
-    let dx_r = (sin_a * dy as f32 + cos_a * dx as f32).round() as i32;
+    let dy_r = (sin_a * dx as f32 + cos_a * dy as f32).round() as i32;
+    let dx_r = (cos_a * dx as f32 - sin_a * dy as f32).round() as i32;
     (dy_r, dx_r)
 }
 
